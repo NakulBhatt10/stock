@@ -32,7 +32,7 @@ const PatternsPage = () => {
                 filter === f
                   ? f === "all"
                     ? "bg-primary/20 text-primary"
-                    : `${typeConfig[f === "all" ? "bullish" : f].bg} ${typeConfig[f === "all" ? "bullish" : f].color}`
+                    : `${typeConfig[f as "bullish" | "bearish" | "neutral"].bg} ${typeConfig[f as "bullish" | "bearish" | "neutral"].color}`
                   : "bg-card/60 text-muted-foreground hover:bg-muted"
               }`}
             >
