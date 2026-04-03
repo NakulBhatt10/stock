@@ -4,6 +4,7 @@ import { TrendingUp, BarChart3, BookOpen, Newspaper, Activity, GraduationCap, Me
 
 const navItems = [
   { path: "/", label: "Home", icon: TrendingUp },
+  { path: "/globe", label: "Globe", icon: BookOpen },
   { path: "/market", label: "Market", icon: BarChart3 },
   { path: "/patterns", label: "Patterns", icon: Activity },
   { path: "/news", label: "News", icon: Newspaper },
@@ -22,7 +23,7 @@ const Navbar = () => {
             <TrendingUp className="h-5 w-5 text-primary" />
           </div>
           <span className="font-display text-lg font-bold tracking-wider text-foreground">
-            MARKET<span className="text-primary">PULSE</span>
+            Fin<span className="text-primary">Quest</span>
           </span>
         </Link>
 

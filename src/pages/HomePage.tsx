@@ -4,40 +4,23 @@ import { indices } from "@/data/mockStocks";
 import TickerBar from "@/components/TickerBar";
 
 const HeroChart = () => {
-  // Animated SVG chart background
-  const points = Array.from({ length: 50 }, (_, i) => {
-    const x = (i / 49) * 100;
-    const y = 50 + Math.sin(i * 0.3) * 20 + Math.cos(i * 0.15) * 10 + (Math.random() - 0.5) * 5;
-    return `${x},${y}`;
-  }).join(" ");
-
   return (
-    <div className="absolute inset-0 overflow-hidden opacity-20">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="h-full w-full">
-        <defs>
-          <linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="hsl(142, 71%, 45%)" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="hsl(142, 71%, 45%)" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        <polyline
-          points={points}
-          fill="none"
-          stroke="hsl(142, 71%, 45%)"
-          strokeWidth="0.3"
-          className="animate-pulse-slow"
-        />
-        <polygon
-          points={`${points} 100,100 0,100`}
-          fill="url(#heroGrad)"
-          className="animate-pulse-slow"
-        />
-      </svg>
-      {/* Grid lines */}
+    <div className="absolute inset-0 overflow-hidden opacity-70">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="h-full w-full object-cover"
+      >
+        <source src="/background1.webm" type="video/webm" />
+      </video>
+
+      {/* Grid lines (kept from original) */}
       {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
-          className="absolute left-0 right-0 border-t border-primary/5"
+          className="absolute left-0 right-0 border-t border-primary/10"
           style={{ top: `${(i + 1) * 12}%` }}
         />
       ))}
@@ -168,7 +151,7 @@ const HomePage = () => {
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/30 py-8">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>© 2026 MarketPulse. Built for educational purposes. Not financial advice.</p>
+          <p>© 2026 Finquest. Built for educational purposes. Not financial advice.</p>
         </div>
       </footer>
     </div>

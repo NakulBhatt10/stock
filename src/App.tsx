@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import MarketPage from "./pages/MarketPage";
 import PatternsPage from "./pages/PatternsPage";
 import NewsPage from "./pages/NewsPage";
+import GlobePage from "./pages/GlobePage";
 import LearnPage from "./pages/LearnPage";
 import NotFound from "./pages/NotFound";
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/market" element={<MarketPage />} />
             <Route path="/patterns" element={<PatternsPage />} />
             <Route path="/news" element={<NewsPage />} />
+            <Route path="/globe" element={<GlobePage />} /> 
             <Route path="/learn" element={<LearnPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
